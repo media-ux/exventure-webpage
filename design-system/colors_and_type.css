@@ -1,0 +1,201 @@
+/* ============================================================
+   EX Venture — "Bali State of Mind" Brand & Design System
+   Literary gravitas meets Silicon-Valley-refugee provocation.
+
+   Navy & ink surfaces. A single gilded gold edge. Warm ivory
+   text. Architectural Jura display, literary Cormorant italic,
+   neutral Instrument Sans body, editorial JetBrains Mono meta.
+   Zero-radius. Never rounded. Rules drawn in gold.
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+:root {
+  /* --- Signature accent — the gilded edge --------------- */
+  --bsm-gold:     #C4A25A;   /* the accent — CTAs, rules, emphasis italics */
+  --bsm-gold-hi:  #d4b26a;   /* hover brighten on buttons */
+  --bsm-gold-dim: #8A6E3A;   /* numerals, muted rules */
+
+  /* --- Surfaces — navy & ink --------------------------- */
+  --navy:       #0D1B2A;     /* primary background */
+  --navy-deep:  #050E17;     /* vignette bottom */
+  --bg-alt:     #080C12;     /* near-black surface */
+  --ink-black:  #111111;     /* quote section */
+  --card:       #0f2030;     /* elevated surface */
+  --card-2:     #14283c;     /* card hover */
+  --border-navy:#1C2A38;     /* solid hairline divider */
+
+  /* --- Gold-tint hairlines (the brand's rules) --------- */
+  --rule-10:    rgba(196,162,90,0.10);
+  --rule-20:    rgba(196,162,90,0.20);
+  --rule-40:    rgba(196,162,90,0.40);
+  --gold-glow:  rgba(196,162,90,0.18);
+
+  /* --- Text — warm to iron ----------------------------- */
+  --warm:    #F0EBE1;        /* primary — warm ivory */
+  --silver:  #A0B9D0;        /* secondary body */
+  --slate:   #9aa5b1;        /* body on navy */
+  --stone:   #888888;        /* meta / footer */
+  --smoke:   #6a7a8a;        /* card excerpt */
+  --iron:    #4A5A6A;        /* mono meta */
+
+  /* --- Semantic aliases (consumed across the site) ----- */
+  --bg:            var(--navy);
+  --bg-elevated:   var(--card);
+  --bg-sunken:     var(--navy-deep);
+  --fg:            var(--warm);
+  --fg-1:          var(--warm);
+  --fg-2:          var(--silver);
+  --fg-3:          var(--slate);
+  --fg-4:          var(--smoke);
+
+  --accent:        var(--bsm-gold);
+  --accent-hover:  var(--bsm-gold-hi);
+  --accent-subtle: rgba(196,162,90,0.10);
+  --accent-glow:   rgba(196,162,90,0.25);
+
+  /* Back-compat alias — older selectors referenced magenta */
+  --exv-magenta:   var(--bsm-gold);
+
+  --success: #34d399;
+  --danger:  #ef4444;
+
+  /* --- Radius — zero. never rounded. ------------------- */
+  --r-xs: 0; --r-sm: 0; --r-md: 0; --r-lg: 0; --r-xl: 0; --r-2xl: 0;
+  --r-pill: 0;
+
+  /* --- Motion ------------------------------------------ */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+  --dur-base: 300ms;
+  --dur-slow: 500ms;
+
+  /* --- Type families ----------------------------------- */
+  --font-display: "Jura", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body:    "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif:   "Cormorant Garamond", Georgia, serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-brand:   "Jura", sans-serif;
+
+  /* --- Type scale -------------------------------------- */
+  --fs-hero:     clamp(54px, 9vw, 128px);
+  --fs-h1:       clamp(44px, 6vw, 88px);
+  --fs-h2:       clamp(32px, 4vw, 52px);
+  --fs-h3:       clamp(24px, 2.6vw, 34px);
+  --fs-body-lg:  18px;
+  --fs-body:     16px;
+  --fs-body-sm:  14px;
+  --fs-eyebrow:  11px;
+
+  --tr-display:  -0.01em;
+  --tr-eyebrow:  0.20em;
+  --tr-meta:     0.18em;
+}
+
+/* ============================================================
+   SEMANTIC TYPE STYLES
+   ============================================================ */
+
+.exv-display, h1.exv-display {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--fs-hero);
+  line-height: 0.9;
+  letter-spacing: var(--tr-display);
+  color: var(--warm);
+}
+
+.exv-h1, h1 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--fs-h1);
+  line-height: 1.0;
+  letter-spacing: var(--tr-display);
+  color: var(--warm);
+}
+
+.exv-h2, h2 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--fs-h2);
+  line-height: 1.1;
+  letter-spacing: var(--tr-display);
+  color: var(--warm);
+}
+
+.exv-h3, h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-h3);
+  line-height: 1.15;
+  color: var(--warm);
+}
+
+/* Literary "voice" — Cormorant italic for emotional beats */
+.exv-voice {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--warm);
+}
+
+.exv-body-lg, p.lg {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg);
+  line-height: 1.8;
+  color: var(--slate);
+}
+
+.exv-body, p {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.8;
+  color: var(--slate);
+}
+
+.exv-body-sm, small {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  line-height: 1.6;
+  color: var(--smoke);
+}
+
+/* The hallmark eyebrow — gold, small caps, wide tracking */
+.exv-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-eyebrow);
+  color: var(--bsm-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.exv-eyebrow::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--bsm-gold);
+  opacity: 0.6;
+}
+
+/* Editorial mono meta — counters "/ 01", dates, labels */
+.exv-mono, code, .exv-counter {
+  font-family: var(--font-mono);
+  font-size: var(--fs-body-sm);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bsm-gold-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Wordmark treatment — Jura 300, wide tracking, MIND-style gold */
+.exv-wordmark {
+  font-family: var(--font-brand);
+  font-weight: 300;
+  letter-spacing: 0.30em;
+  text-transform: uppercase;
+  color: var(--warm);
+}
